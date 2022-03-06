@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/halUtama.dart';
 import 'package:flutter_complete_guide/result.dart';
 
 import './quiz.dart';
@@ -79,9 +80,7 @@ class MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Quiz App'),
         ),
-        body: questionIndex < questions.length
-            ? Quiz(questions, _answerQuestion, questionIndex)
-            : Result(totalscore, resetQuiz),
+        body: Utama()
       ),
     );
   }

@@ -7,10 +7,19 @@ class Utama extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: RaisedButton(
-        child: Text('Modul'),
-      ),
-      
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            RaisedButton(
+              child: Text('Modul'),
+              onPressed: null,
+            ),
+            RaisedButton(
+              child: Text('Quiz'),
+              onPressed: null,
+            ),
+          ]),
     );
   }
 }
