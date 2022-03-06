@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/result.dart';
 
-import './question.dart';
-import './answer.dart';
+import './quiz.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,13 +18,54 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  var questionIndex = 0;
-  var count = 0;
-  void answerQuestion() {
-    
+  void resetQuiz() {
     setState(() {
-      count = count + 1;
-      questionIndex = count % 3;
+      questionIndex = 0;
+      totalscore = 0;
+    });
+  }
+
+  final questions = const [
+    {
+      'questionText': 'Apa makanan kesukaan mu?',
+      'answers': [
+        {'text': 'Magelangan', 'score': 1},
+        {'text': 'Nasi Tumpang', 'score': 2},
+        {'text': 'Ayam Goreng', 'score': 3}
+      ],
+    },
+    {
+      'questionText': 'Apa minuman kesukaan mu?',
+      'answers': [
+        {'text': 'Es Teh Manis', 'score': 1},
+        {'text': 'Coca cola', 'score': 2},
+        {'text': 'Kopi Kapal Api', 'score': 3}
+      ],
+    },
+    {
+      'questionText': 'Apa hobi mu?',
+      'answers': [
+        {'text': 'Main Game', 'score': 1},
+        {'text': 'Main Futsal', 'score': 2},
+        {'text': 'Jalan-jalan', 'score': 3}
+      ],
+    },
+  ];
+
+  var questionIndex = 0;
+  var totalscore = 0;
+  // var count = 0;
+  void _answerQuestion(int score) {
+    totalscore = totalscore + score;
+    // totalscore += score;
+
+    if (questionIndex < questions.length) {
+      print('We have more questions!');
+    }
+
+    setState(() {
+      // count = count + 1;
+      questionIndex = questionIndex + 1;
     });
 
     // print('Answer Chonsen!');
@@ -33,34 +74,14 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      {
-        'questionText': 'What\'s your favorite food?',
-        'answers': ['Magelangan', 'Nasi Tumpang', 'Ayam Goreng'],
-      },
-      {
-        'questionText': 'What\'s your favorite drink?',
-        'answers': ['Es teh', 'Coca Cola', 'Fanta'],
-      },
-      {
-        'questionText': 'What\'s your zodiac sign',
-        'answers': ['Cancer', 'Taurus', 'Leo'],
-      },
-    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('Quiz App'),
         ),
-        body: Column(
-          children: [
-            Question(questions[questionIndex]['questionText']
-            ),
-            ...(questions[questionIndex]['answers'] as List<String>).map((answer) {
-              return Answer(answer, answerQuestion);
-            }).toList()
-          ],
-        ),
+        body: questionIndex < questions.length
+            ? Quiz(questions, _answerQuestion, questionIndex)
+            : Result(totalscore, resetQuiz),
       ),
     );
   }
