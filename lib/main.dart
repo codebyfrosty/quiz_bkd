@@ -73,10 +73,18 @@ class MyAppState extends State<MyApp> {
     print(questionIndex);
   }
 
-  void quizLogic() {
-    questionIndex < questions.length
+  bool showQuiz = false;
+
+  void balikmenu(){
+    setState(() {
+      showQuiz = false;
+    });
+  }
+
+  Widget quizLogic() {
+    return questionIndex < questions.length
         ? Quiz(questions, _answerQuestion, questionIndex)
-        : Result(totalscore, resetQuiz);
+        : Result(totalscore, resetQuiz, balikmenu);
     print(questionIndex);
   }
 
@@ -88,11 +96,17 @@ class MyAppState extends State<MyApp> {
         title: Text('Quiz App'),
       ),
       body: Center(
-              child: RaisedButton(
+        child: showQuiz
+            ? quizLogic()
+            : RaisedButton(
                 child: Text('Quiz'),
-                onPressed: quizLogic, 
-              ),
-            ),
+                onPressed: () {
+                  print('object');
+                  setState(() {
+                    showQuiz = true;
+                  });
+                }),
+      ),
     ));
   }
 }

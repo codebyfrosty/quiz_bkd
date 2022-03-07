@@ -5,7 +5,8 @@ class Result extends StatelessWidget {
 
   Function reset;
   final int resultScore;
-  Result(this.resultScore, this.reset);
+  Function showQ;
+  Result(this.resultScore, this.reset, this.showQ);
 
   String get resultphrase {
     var resultText = 'You did all the questions!';
@@ -26,9 +27,14 @@ class Result extends StatelessWidget {
           resultphrase,
           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
         ),
-        FlatButton(onPressed: reset, 
-        child: Text('Coba Lagi')
-         )
+        FlatButton(onPressed: reset, child: Text('Coba Lagi')),
+        RaisedButton(
+          onPressed: () {
+            print('object');
+            showQ();
+          },
+          child: Text('Balik ke Menu Awal'),
+        )
       ],
     ));
   }
