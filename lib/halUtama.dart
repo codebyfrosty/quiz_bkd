@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Utama extends StatelessWidget {
+  final Function logic;
+  Utama(this.logic);
   // const Utama({ Key? key }) : super(key: key);
 
   @override
@@ -11,13 +13,17 @@ class Utama extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            RaisedButton(
-              child: Text('Modul'),
-              onPressed: null,
+            Center(
+              child: RaisedButton(
+                child: Text('Modul'),
+                onPressed: null,
+              ),
             ),
-            RaisedButton(
-              child: Text('Quiz'),
-              onPressed: null,
+            Center(
+              child: RaisedButton(
+                child: Text('Quiz'),
+                onPressed: logic, 
+              ),
             ),
           ]),
     );

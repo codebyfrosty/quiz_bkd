@@ -6,7 +6,8 @@ class halQuiz extends StatelessWidget {
   // const halQuiz({ Key? key }) : super(key: key);
 
   int questionIndex;
-  var questions ;
+  var questions;
+  var _answerQuestion;
 
   Function mainquiz(){
    
@@ -15,7 +16,7 @@ class halQuiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      // Quiz()
     );
   }
 }

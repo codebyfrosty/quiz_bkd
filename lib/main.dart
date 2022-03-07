@@ -73,15 +73,26 @@ class MyAppState extends State<MyApp> {
     print(questionIndex);
   }
 
+  void quizLogic() {
+    questionIndex < questions.length
+        ? Quiz(questions, _answerQuestion, questionIndex)
+        : Result(totalscore, resetQuiz);
+    print(questionIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Quiz App'),
-        ),
-        body:Quiz(questions, _answerQuestion, questionIndex)
+        home: Scaffold(
+      appBar: AppBar(
+        title: Text('Quiz App'),
       ),
-    );
+      body: Center(
+              child: RaisedButton(
+                child: Text('Quiz'),
+                onPressed: quizLogic, 
+              ),
+            ),
+    ));
   }
 }
