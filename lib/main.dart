@@ -80,7 +80,7 @@ class MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Quiz App'),
         ),
-        body: Utama()
+        body:Quiz(questions, _answerQuestion, questionIndex)
       ),
     );
   }
