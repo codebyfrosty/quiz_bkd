@@ -117,14 +117,12 @@ class MyAppState extends State<MyApp> {
             appBar: AppBar(
               title: Text('Quiz App'),
             ),
-            body: showUtama
-                ? Utama(
-                    operatorModul: operatorModul,
-                    operatorQuiz: operatorQuiz,
-                    quizLogic: quizLogic(),
-                    showModul: showModul,
-                    showQuiz: showQuiz,
-                  )
-                : null));
+            body: Utama(
+              operatorModul: operatorModul,
+              operatorQuiz: operatorQuiz,
+              quizLogic: quizLogic(),
+              showModul: showModul,
+              showQuiz: showQuiz,
+            )));
   }
 }

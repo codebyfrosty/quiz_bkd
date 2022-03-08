@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import './modul.dart';
 
 class Utama extends StatelessWidget {
-  final Widget quizLogic;
+   Widget quizLogic;
   final Function operatorModul;
   final Function operatorQuiz;
   bool showModul;
@@ -24,14 +24,14 @@ class Utama extends StatelessWidget {
           Text('Halaman Utama',
               style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
           Center(
-            child: showModul
-                ? Modul()
-                : RaisedButton(
-                    child: Text('Modul'),
-                    onPressed: () {
-                      print('modul clicked');
-                      operatorModul;
-                    }),
+            child: RaisedButton(
+                child: Text('Modul'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Modul()),
+                  );
+                }),
           ),
           Center(
             child: showQuiz
