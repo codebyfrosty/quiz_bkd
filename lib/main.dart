@@ -107,6 +107,7 @@ class MyAppState extends State<MyApp> {
       showModul = false;
       showQuiz = true;
       showUtama = false;
+      print('clicked');
     });
   }
 
@@ -118,32 +119,29 @@ class MyAppState extends State<MyApp> {
               title: Text('Quiz App'),
             ),
             body: Container(
-      child: Column(
-        children: [
-          Text('Halaman Utama',
-              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-          Center(
-            child: RaisedButton(
-                child: Text('Modul'),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Modul()),
-                  );
-                }),
-          ),
-          Center(
-            child: showQuiz
-                ? quizLogic()
-                : RaisedButton(
-                    child: Text('Quiz'),
-                    onPressed: () {
-                      print('Quiz clicked');
-                      operatorQuiz;
-                    }),
-          ),
-        ],
-      ),
-    )));
+              child: Column(
+                children: [
+                  Text('Halaman Utama',
+                      style:
+                          TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+                  Center(
+                    child: RaisedButton(
+                        child: Text('Modul'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Modul()),
+                          );
+                        }),
+                  ),
+                  Center(
+                    child: showQuiz
+                        ? quizLogic()
+                        : RaisedButton(
+                            child: Text('Quiz'), onPressed: operatorQuiz),
+                  ),
+                ],
+              ),
+            )));
   }
 }

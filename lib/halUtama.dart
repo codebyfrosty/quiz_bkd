@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import './modul.dart';
 
 class Utama extends StatelessWidget {
-   Widget quizLogic;
+  Widget quizLogic;
   final Function operatorModul;
   final Function operatorQuiz;
   bool showModul;
