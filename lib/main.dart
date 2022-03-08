@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/halUtama.dart';
+
+// import 'package:flutter_complete_guide/modul.dart';
 import 'package:flutter_complete_guide/result.dart';
+import './halUtama.dart';
 
 import './quiz.dart';
 
@@ -74,10 +76,14 @@ class MyAppState extends State<MyApp> {
   }
 
   bool showQuiz = false;
+  bool showModul = false;
+  bool showUtama = true;
 
-  void balikmenu(){
+  void balikmenu() {
     setState(() {
       showQuiz = false;
+      questionIndex = 0;
+      totalscore = 0;
     });
   }
 
@@ -85,28 +91,40 @@ class MyAppState extends State<MyApp> {
     return questionIndex < questions.length
         ? Quiz(questions, _answerQuestion, questionIndex)
         : Result(totalscore, resetQuiz, balikmenu);
-    print(questionIndex);
+    // print(questionIndex);
+  }
+
+  void operatorModul() {
+    setState(() {
+      showModul = true;
+      showQuiz = false;
+      showUtama = false;
+    });
+  }
+
+  void operatorQuiz() {
+    setState(() {
+      showModul = false;
+      showQuiz = true;
+      showUtama = false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: Text('Quiz App'),
-      ),
-      body: Center(
-        child: showQuiz
-            ? quizLogic()
-            : RaisedButton(
-                child: Text('Quiz'),
-                onPressed: () {
-                  print('object');
-                  setState(() {
-                    showQuiz = true;
-                  });
-                }),
-      ),
-    ));
+            appBar: AppBar(
+              title: Text('Quiz App'),
+            ),
+            body: showUtama
+                ? Utama(
+                    operatorModul: operatorModul,
+                    operatorQuiz: operatorQuiz,
+                    quizLogic: quizLogic(),
+                    showModul: showModul,
+                    showQuiz: showQuiz,
+                  )
+                : null));
   }
 }
