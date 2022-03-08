@@ -32,6 +32,7 @@ class Result extends StatelessWidget {
           onPressed: () {
             print('object');
             showQ();
+            reset();
           },
           child: Text('Balik ke Menu Awal'),
         )
