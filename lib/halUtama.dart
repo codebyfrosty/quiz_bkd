@@ -5,10 +5,13 @@ import './modul.dart';
 
 class Utama extends StatelessWidget {
   Widget quizLogic;
+  Widget quizLogic2;
   final Function operatorModul;
   final Function operatorQuiz;
+  final Function operatorQuiz2;
   bool showModul;
   bool showQuiz;
+  bool showQuiz2;
   bool showUtama;
   Utama(
       {@required this.quizLogic,
@@ -16,7 +19,11 @@ class Utama extends StatelessWidget {
       @required this.operatorQuiz,
       @required this.showModul,
       @required this.showQuiz,
-      @required this.showUtama});
+      @required this.showUtama,
+      @required this.operatorQuiz2,
+      @required this.showQuiz2,
+      @required this.quizLogic2
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +44,22 @@ class Utama extends StatelessWidget {
                 }),
           ),
           Center(
-            child: showQuiz
+            child: showQuiz 
                 ? quizLogic
                 : RaisedButton(child: Text('Quiz'), onPressed: operatorQuiz),
           ),
+          Center(
+            child: showQuiz2
+                ? quizLogic2
+                : RaisedButton(child: Text('PROVE IT!!'), onPressed: operatorQuiz),
+          ),
         ],
       )
-      : quizLogic
+      : showQuiz
+      ? quizLogic
+      : showQuiz2
+      ? quizLogic2
+      : quizLogic2
     );
   }
 }

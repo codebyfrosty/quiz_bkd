@@ -21,12 +21,7 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  void resetQuiz() {
-    setState(() {
-      questionIndex = 0;
-      totalscore = 0;
-    });
-  }
+// Quiz pertama
 
   final questions = const [
     {
@@ -57,7 +52,14 @@ class MyAppState extends State<MyApp> {
 
   var questionIndex = 0;
   var totalscore = 0;
-  // var count = 0;
+
+  void resetQuiz() {
+    setState(() {
+      questionIndex = 0;
+      totalscore = 0;
+    });
+  }
+
   void _answerQuestion(int score) {
     totalscore = totalscore + score;
     // totalscore += score;
@@ -67,15 +69,80 @@ class MyAppState extends State<MyApp> {
     }
 
     setState(() {
-      // count = count + 1;
       questionIndex = questionIndex + 1;
     });
 
-    // print('Answer Chonsen!');
     print(questionIndex);
   }
 
+  Widget quizLogic() {
+    return questionIndex < questions.length
+        ? Quiz(questions, _answerQuestion, questionIndex)
+        : Result(totalscore, resetQuiz, balikmenu);
+  }
+
+//Screening
+
+  final questions2 = const [
+    {
+      'questionText': 'TESTQUESTION',
+      'answers': [
+        {'text': 'Magelangan', 'score': 1},
+        {'text': 'Nasi Tumpang', 'score': 2},
+        {'text': 'Ayam Goreng', 'score': 3}
+      ],
+    },
+    {
+      'questionText': 'TESTQUESTION2',
+      'answers': [
+        {'text': 'Es Teh Manis', 'score': 1},
+        {'text': 'Coca cola', 'score': 2},
+        {'text': 'Kopi Kapal Api', 'score': 3}
+      ],
+    },
+    {
+      'questionText': 'Apa hobi mu?',
+      'answers': [
+        {'text': 'Main Game', 'score': 1},
+        {'text': 'Main Futsal', 'score': 2},
+        {'text': 'Jalan-jalan', 'score': 3}
+      ],
+    },
+  ];
+
+  var questionIndex2 = 0;
+  var totalscore2 = 0;
+
+  void resetQuiz2() {
+    setState(() {
+      questionIndex2 = 0;
+      totalscore2 = 0;
+    });
+  }
+
+  void _answerQuestion2(int score2) {
+    totalscore2 = totalscore2 + score2;
+    // totalscore += score;
+
+    if (questionIndex2 < questions.length) {
+      print('We have more questions!');
+    }
+
+    setState(() {
+      questionIndex2 = questionIndex2 + 1;
+    });
+
+    print(questionIndex2);
+  }
+
+  Widget quizLogic2() {
+    return questionIndex2 < questions2.length
+        ? Quiz(questions2, _answerQuestion2, questionIndex2)
+        : Result(totalscore2, resetQuiz2, balikmenu2);
+  }
+
   bool showQuiz = false;
+  bool showQuiz2 = false;
   bool showModul = false;
   bool showUtama = true;
 
@@ -88,11 +155,13 @@ class MyAppState extends State<MyApp> {
     });
   }
 
-  Widget quizLogic() {
-    return questionIndex < questions.length
-        ? Quiz(questions, _answerQuestion, questionIndex)
-        : Result(totalscore, resetQuiz, balikmenu);
-    // print(questionIndex);
+  void balikmenu2() {
+    setState(() {
+      showQuiz2 = false;
+      showUtama = true;
+      questionIndex = 0;
+      totalscore = 0;
+    });
   }
 
   void operatorModul() {
@@ -104,6 +173,15 @@ class MyAppState extends State<MyApp> {
   }
 
   void operatorQuiz() {
+    setState(() {
+      showModul = false;
+      showQuiz = true;
+      showUtama = false;
+      print('clicked');
+    });
+  }
+
+  void operatorQuiz2 () {
     setState(() {
       showModul = false;
       showQuiz = true;
@@ -126,6 +204,9 @@ class MyAppState extends State<MyApp> {
               showModul: showModul,
               showQuiz: showQuiz,
               showUtama: showUtama,
+              operatorQuiz2: operatorQuiz2,
+              quizLogic2: quizLogic2(),
+              showQuiz2: showQuiz2,
             )));
   }
 }
