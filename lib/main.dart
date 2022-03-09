@@ -78,7 +78,7 @@ class MyAppState extends State<MyApp> {
   Widget quizLogic() {
     return questionIndex < questions.length
         ? Quiz(questions, _answerQuestion, questionIndex)
-        : Result(totalscore, resetQuiz, balikmenu);
+        : Result(totalscore, resetQuiz);
   }
 
 //Screening
@@ -138,7 +138,7 @@ class MyAppState extends State<MyApp> {
   Widget quizLogic2() {
     return questionIndex2 < questions2.length
         ? Quiz(questions2, _answerQuestion2, questionIndex2)
-        : Result(totalscore2, resetQuiz2, balikmenu2);
+        : Result(totalscore2, resetQuiz2, );
   }
 
   bool showQuiz = false;
@@ -181,7 +181,7 @@ class MyAppState extends State<MyApp> {
     });
   }
 
-  void operatorQuiz2 () {
+  void operatorQuiz2() {
     setState(() {
       showModul = false;
       showQuiz = true;
@@ -207,6 +207,12 @@ class MyAppState extends State<MyApp> {
               operatorQuiz2: operatorQuiz2,
               quizLogic2: quizLogic2(),
               showQuiz2: showQuiz2,
+              answerQuestion: _answerQuestion,
+              balikmenu: balikmenu,
+              questionIndex: questionIndex,
+              questions: questions,
+              resetQuiz: resetQuiz,
+              totalscore: totalscore,
             )));
   }
 }
