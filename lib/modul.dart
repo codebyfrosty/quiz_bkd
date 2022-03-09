@@ -14,10 +14,10 @@ class Modul extends StatelessWidget {
           'Ini nanti isinya modul',
           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
         ),
-        RaisedButton(
-          onPressed: () {},
-          child: Text('Mulai Quiz'),
-        )
+        // RaisedButton(
+        //   onPressed: () {},
+        //   child: Text('Mulai Quiz'),
+        
       ]),
     );
 

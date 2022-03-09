@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_complete_guide/modul.dart';
+// import 'package:flutter_complete_guide/modul.dart';
 import 'package:flutter_complete_guide/result.dart';
 import './halUtama.dart';
 
@@ -82,6 +82,7 @@ class MyAppState extends State<MyApp> {
   void balikmenu() {
     setState(() {
       showQuiz = false;
+      showUtama = true;
       questionIndex = 0;
       totalscore = 0;
     });
@@ -118,30 +119,13 @@ class MyAppState extends State<MyApp> {
             appBar: AppBar(
               title: Text('Quiz App'),
             ),
-            body: Container(
-              child: Column(
-                children: [
-                  Text('Halaman Utama',
-                      style:
-                          TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-                  Center(
-                    child: RaisedButton(
-                        child: Text('Modul'),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Modul()),
-                          );
-                        }),
-                  ),
-                  Center(
-                    child: showQuiz
-                        ? quizLogic()
-                        : RaisedButton(
-                            child: Text('Quiz'), onPressed: operatorQuiz),
-                  ),
-                ],
-              ),
+            body: Utama(
+              operatorModul: operatorModul,
+              operatorQuiz: operatorQuiz,
+              quizLogic: quizLogic(),
+              showModul: showModul,
+              showQuiz: showQuiz,
+              showUtama: showUtama,
             )));
   }
 }

@@ -9,17 +9,20 @@ class Utama extends StatelessWidget {
   final Function operatorQuiz;
   bool showModul;
   bool showQuiz;
+  bool showUtama;
   Utama(
       {@required this.quizLogic,
       @required this.operatorModul,
       @required this.operatorQuiz,
       @required this.showModul,
-      @required this.showQuiz});
+      @required this.showQuiz,
+      @required this.showUtama});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
+      child: showUtama
+      ? Column(
         children: [
           Text('Halaman Utama',
               style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
@@ -36,15 +39,11 @@ class Utama extends StatelessWidget {
           Center(
             child: showQuiz
                 ? quizLogic
-                : RaisedButton(
-                    child: Text('Quiz'),
-                    onPressed: () {
-                      print('Quiz clicked');
-                      operatorQuiz;
-                    }),
+                : RaisedButton(child: Text('Quiz'), onPressed: operatorQuiz),
           ),
         ],
-      ),
+      )
+      : quizLogic
     );
   }
 }
