@@ -20,5 +20,3 @@ class Modul extends StatelessWidget {
     );
   }
 }
-
-

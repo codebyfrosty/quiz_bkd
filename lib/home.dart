@@ -5,44 +5,14 @@ import './modul.dart';
 import './quiz1.dart';
 import './quiz2.dart';
 
-class Utama extends StatelessWidget {
-  Widget quizLogic;
-  Widget quizLogic2;
-  final Function operatorModul;
-  final Function operatorQuiz;
-  final Function operatorQuiz2;
-  final Function answerQuestion;
-  final Function balikmenu;
-  final Function resetQuiz;
-  bool showModul;
-  bool showQuiz;
-  bool showQuiz2;
-  bool showUtama;
-  var questionIndex;
-  var questions;
-  var totalscore;
-  Utama(
-      {@required this.quizLogic,
-      @required this.operatorModul,
-      @required this.operatorQuiz,
-      @required this.showModul,
-      @required this.showQuiz,
-      @required this.showUtama,
-      @required this.operatorQuiz2,
-      @required this.showQuiz2,
-      @required this.quizLogic2,
-      @required this.answerQuestion,
-      @required this.balikmenu,
-      @required this.questionIndex,
-      @required this.questions,
-      @required this.resetQuiz,
-      @required this.totalscore});
+class Home extends StatelessWidget {
+ 
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: showUtama
-            ? Column(
+        child: 
+             Column(
                 children: [
                   Text('Halaman Utama',
                       style:
@@ -75,10 +45,6 @@ class Utama extends StatelessWidget {
                   ),
                 ],
               )
-            : showQuiz
-                ? quizLogic
-                : showQuiz2
-                    ? quizLogic2
-                    : quizLogic2);
+            );
   }
 }

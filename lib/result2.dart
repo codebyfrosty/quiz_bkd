@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 class Result2 extends StatelessWidget {
   // const Rlt({ Key? key }) : super(key: key);
 
-  Function reset;
+  final Function reset;
   final int resultScore;
-  // Function hideQ;
   Result2(this.resultScore, this.reset);
 
   String get resultphrase {
     var resultText = 'You did all the questions!';
-    if (resultScore >= 9) {
-      resultText = 'Nilai anda 9';
-    } else {
-      resultText = 'Quiz selesai';
+    if (resultScore == 0) {
+      resultText = 'Pemberian yang Anda terima bebas dari unsur gratifikasi';
+    } else if(resultScore <= 2) {
+      resultText = 'Pemberian yang Anda terima sedikit terindakasi sebagai gratifikasi';
+    } else if(resultScore <= 4) {
+      resultText = 'Terdapat banyak indikasi gratifikasi pada pemberian yang Anda terima. Sebaiknya tidak diterima.';
+    } else if(resultScore <= 7) {
+      resultText = 'Pemberian yang Anda terima sedikit hampir dapat dipastikan adalah gratifikasi!!';
     }
     return resultText;
   }
@@ -28,13 +31,13 @@ class Result2 extends StatelessWidget {
           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
         ),
         FlatButton(onPressed: reset, child: Text('Coba Lagi')),
-        RaisedButton(
-          onPressed: () {
-            print('object');
+        // RaisedButton(
+        //   onPressed: () {
+        //     print('object');
             
-          },
-          child: Text('Balik ke Menu Awal'),
-        )
+        //   },
+        //   child: Text('Balik ke Menu Awal'),
+        // )
       ],
     ));
   }

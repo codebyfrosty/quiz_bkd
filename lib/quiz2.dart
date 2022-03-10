@@ -18,29 +18,55 @@ class Quiz2State extends State<Quiz2> {
   
   final questions = const [
     {
-      'questionText': 'TESTQUESTION',
+      'questionText': 'Apakah pemberian itu mempengaruhi pengambilan keputusan Anda?',
       'answers': [
-        {'text': 'Magelangan', 'score': 1},
-        {'text': 'Nasi Tumpang', 'score': 2},
-        {'text': 'Ayam Goreng', 'score': 3}
+        {'text': 'Ya', 'score': 1},
+        {'text': 'Tidak', 'score': 0},
       ],
     },
     {
-      'questionText': 'TESTQUESTION2',
+      'questionText': 'Apakah pemberian itu bertentangan dengan ketentuan?',
       'answers': [
-        {'text': 'Es Teh Manis', 'score': 1},
-        {'text': 'Coca cola', 'score': 2},
-        {'text': 'Kopi Kapal Api', 'score': 3}
+        {'text': 'Ya', 'score': 1},
+        {'text': 'Tidak', 'score': 0},
       ],
     },
     {
-      'questionText': 'Apa hobi mu?',
+      'questionText': 'Apakah pemberian itu dilakukan secara terbuka?',
       'answers': [
-        {'text': 'Main Game', 'score': 1},
-        {'text': 'Main Futsal', 'score': 2},
-        {'text': 'Jalan-jalan', 'score': 3}
+        {'text': 'Ya', 'score': 0},
+        {'text': 'Tidak', 'score': 1},
       ],
     },
+    {
+      'questionText': 'Apakah pemberian itu memiliki nilai yang besar?',
+      'answers': [
+        {'text': 'Ya', 'score': 1},
+        {'text': 'Tidak', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'Apakah pemberian itu bertentangan dengan kode etik?',
+      'answers': [
+        {'text': 'Ya', 'score': 1},
+        {'text': 'Tidak', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'Apakah pemberian itu memiliki konflik kepentingan?',
+      'answers': [
+        {'text': 'Ya', 'score': 1},
+        {'text': 'Tidak', 'score': 0},
+      ],
+    },
+    {
+      'questionText': 'Apakah pemberian itu dilakukan berdekatan dengan waktu pengambilan keputusan?',
+      'answers': [
+        {'text': 'Ya', 'score': 1},
+        {'text': 'Tidak', 'score': 0},
+      ],
+    },
+    
   ];
 
   var questionIndex = 0;
