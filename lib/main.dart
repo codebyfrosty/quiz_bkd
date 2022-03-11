@@ -24,7 +24,7 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text('Quiz App'),
+              title: Text('Prove It!'),
             ),
             body: Home()));
   }

@@ -5,22 +5,22 @@ import 'package:flutter/material.dart';
 import './quiz.dart';
 import './result.dart';
 
-class Quiz1 extends StatefulWidget {
+class Quiz3 extends StatefulWidget {
   // const Quiz1({ Key? key }) : super(key: key);
 
   @override
   State<StatefulWidget> createState(){
-    return Quiz1State();
+    return Quiz3State();
   }
 }
 
-class Quiz1State extends State<Quiz1> {
+class Quiz3State extends State<Quiz3> {
   
   final questions = const [
  
 
     {
-      'questionText': 'Jenis Gratifikasi dibawah ini tidak wajib dilaporkan, kecuali?',
+      'questionText': 'Studi kasus 1',
       'answers': [
         {'text': 'Pemberian setelah melaksanakan tugas pelayanan', 'score': 1},
         {'text': 'Mendapat cinderamata dari kegiatan resmi dinas seperti rapat dan seminar', 'score': 0},
@@ -30,7 +30,7 @@ class Quiz1State extends State<Quiz1> {
       ],
     },
     {
-      'questionText': 'Aturan hukum gratifikasi, diatur dalam?',
+      'questionText': 'Studi kasus 2',
       'answers': [
         {'text': 'Pasal 12B dan 12C Undang-Undang Nomor 31 Tahun 1999', 'score': 0},
         {'text': 'Pasal 12b dan 12c Undang-Undang Nomor 20 Tahun 2001', 'score': 0},
@@ -39,7 +39,7 @@ class Quiz1State extends State<Quiz1> {
       ],
     },
     {
-      'questionText': 'Apa yang dimaksud dengan UPG dalam tubuh KPK?',
+      'questionText': 'Studi kasus 3',
       'answers': [
         {'text': 'Unit Pemegang Gratifikasi', 'score': 0},
         {'text': 'Unit Pengelola Gratifikasi', 'score': 0},
@@ -48,7 +48,7 @@ class Quiz1State extends State<Quiz1> {
       ],
     },
     {
-      'questionText': 'Batas waktu penyerahan barang atau uang gratifiaksi ke KPK jika telah ditetapkan milik Negara adalah?',
+      'questionText': 'Studi kasus 4',
       'answers': [
         {'text': '7 hari kerja', 'score': 0},
         {'text': '21 hari kerja', 'score': 0},

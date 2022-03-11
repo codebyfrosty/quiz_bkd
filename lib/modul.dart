@@ -1,24 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/moduls/kategori.dart';
+import 'package:flutter_complete_guide/moduls/konsekuensi.dart';
+import 'package:flutter_complete_guide/moduls/penerima.dart';
+
+import './moduls/pengertian.dart';
 
 class Modul extends StatelessWidget {
   // const Modul({ Key? key }) : super(key: key);
-  final String teks =
-      'Pengertian gratifikasi terdapat pada Penjelasan Pasal 12B Ayat (1) Undang-Undang Nomor 31 Tahun 1999 juncto Undang-Undang Nomor 20 Tahun 2001, bahwa: “Yang dimaksud dengan ”gratifikasi” dalam ayat ini adalah pemberian dalam arti luas, yakni meliputi pemberian uang, barang, rabat (discount), komisi, pinjaman tanpa bunga, tiket perjalanan, fasilitas penginapan, perjalanan wisata, pengobatan cuma-cuma, dan fasilitas lainnya. Gratifikasi tersebut baik yang diterima di dalam negeri maupun di luar negeri dan yang dilakukan dengan menggunakan sarana elektronik atau tanpa sarana elektronik”.';
-
+  
   @override
   Widget build(BuildContext context) {
-    return new Container(
-      child: new Scaffold(
-        appBar: new AppBar(),
-        body: new SingleChildScrollView(
-          child: new Text(
-            teks,
-            style: new TextStyle(fontSize: 25.0),
-          ),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Modul'),
         ),
-      ),
-    );
+        body: Container(
+            child: Column(
+          children: [
+            Text('Pilih topik bahasan',
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+            Center(
+              child: ElevatedButton(
+                  child: Text('Pengertian Gratifikasi'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => pengertian()),
+                    );
+                  }),
+            ),
+            Center(
+              child: ElevatedButton(
+                  child: Text('Kategori Gratifikasi'),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => kategori()));
+                  }),
+            ),
+            Center(
+              child: ElevatedButton(
+                  child: Text('Penerima yang wajib melaporkan'),
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => penerima()));
+                  }),
+            ),
+            Center(
+              child: ElevatedButton(
+                  child: Text('Konseskuensi bagi yang tidak melaporkan'),
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => konsekuensi()));
+                  }),
+            ),
+          ],
+        )));
   }
 }
-
-

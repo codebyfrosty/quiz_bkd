@@ -16,7 +16,7 @@ class Result2 extends StatelessWidget {
     } else if(resultScore <= 4) {
       resultText = 'Terdapat banyak indikasi gratifikasi pada pemberian yang Anda terima. Sebaiknya tidak diterima.';
     } else if(resultScore <= 7) {
-      resultText = 'Pemberian yang Anda terima sedikit hampir dapat dipastikan adalah gratifikasi!!';
+      resultText = 'Pemberian yang Anda terima hampir dapat dipastikan adalah gratifikasi!!';
     }
     return resultText;
   }
@@ -30,7 +30,7 @@ class Result2 extends StatelessWidget {
           resultphrase,
           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
         ),
-        FlatButton(onPressed: reset, child: Text('Coba Lagi')),
+        ElevatedButton(onPressed: reset, child: Text('Coba Lagi')),
         // RaisedButton(
         //   onPressed: () {
         //     print('object');

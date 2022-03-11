@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import './modul.dart';
 import './quiz1.dart';
 import './quiz2.dart';
+import './quiz3.dart';
 
 class Home extends StatelessWidget {
  
@@ -33,6 +34,14 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) => Quiz1()));
+                        }),
+                  ),
+                  Center(
+                    child: RaisedButton(
+                        child: Text('Studi Kasus'),
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Quiz3()));
                         }),
                   ),
                   Center(

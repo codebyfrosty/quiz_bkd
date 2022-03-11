@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class pengertian extends StatelessWidget {
+class penerima extends StatelessWidget {
   // const Modul({ Key? key }) : super(key: key);
   final String _teks =
-      'Pengertian gratifikasi terdapat pada Penjelasan Pasal 12B Ayat (1) Undang-Undang Nomor 31 Tahun 1999 juncto Undang-Undang Nomor 20 Tahun 2001, bahwa: “Yang dimaksud dengan ”gratifikasi” dalam ayat ini adalah pemberian dalam arti luas, yakni meliputi pemberian uang, barang, rabat (discount), komisi, pinjaman tanpa bunga, tiket perjalanan, fasilitas penginapan, perjalanan wisata, pengobatan cuma-cuma, dan fasilitas lainnya. Gratifikasi tersebut baik yang diterima di dalam negeri maupun di luar negeri dan yang dilakukan dengan menggunakan sarana elektronik atau tanpa sarana elektronik”.';
+      'Penerimaan gratifikasi oleh pegawai negeri atau penyelenggara negara wajib dilaporkan kepada Komisi Pemberantasan Korupsi selambat-lambatnya 30 (tiga puluh) hari kerja terhitung sejak tanggal gratifikasi tersebut diterima. Hal ini sesuai dengan ketentuan yang tercantum dalam Pasal 12C ayat (2) Undang- Undang Nomor 31 Tahun 1999 juncto Undang-Undang Nomor 20 Tahun 2001.';
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class pengertian extends StatelessWidget {
         body: new SingleChildScrollView(
           child: new RichText(
             text: TextSpan(
-              text: 'Apa yang dimaksud dengan gratifikasi? \n \n',
+              text: 'Penerima gratifikasi yang wajib melaporkan gratifikasi \n \n',
               style: TextStyle(fontSize: 30, color: Colors.red, fontWeight: FontWeight.bold),
               children: [
                 TextSpan(

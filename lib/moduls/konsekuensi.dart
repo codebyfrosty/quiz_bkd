@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class pengertian extends StatelessWidget {
+class konsekuensi extends StatelessWidget {
   // const Modul({ Key? key }) : super(key: key);
   final String _teks =
-      'Pengertian gratifikasi terdapat pada Penjelasan Pasal 12B Ayat (1) Undang-Undang Nomor 31 Tahun 1999 juncto Undang-Undang Nomor 20 Tahun 2001, bahwa: “Yang dimaksud dengan ”gratifikasi” dalam ayat ini adalah pemberian dalam arti luas, yakni meliputi pemberian uang, barang, rabat (discount), komisi, pinjaman tanpa bunga, tiket perjalanan, fasilitas penginapan, perjalanan wisata, pengobatan cuma-cuma, dan fasilitas lainnya. Gratifikasi tersebut baik yang diterima di dalam negeri maupun di luar negeri dan yang dilakukan dengan menggunakan sarana elektronik atau tanpa sarana elektronik”.';
+      'Sanksi pidana yang ditetapkan pada tindak pidana ini cukup berat, yaitu pidana penjara minimum empat tahun, dan maksimum 20 tahun atau pidana penjara seumur hidup, dan pidana denda paling sedikit Rp. 200.000.000,00 (dua ratus juta rupiah), maksimum Rp1.000.000.000,00 (satu miliyar rupiah). Dari rumusan ini jelas sekali bahwa penerimaan gratifikasi merupakan hal yang sangat serius sebagai salah satu bentuk tindak pidana korupsi, dengan sanksi pidana yang persis sama dengan tindak pidana suap lainnya dalam Undang-Undang Pemberantasan Tindak Pidana Korupsi';
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class pengertian extends StatelessWidget {
         body: new SingleChildScrollView(
           child: new RichText(
             text: TextSpan(
-              text: 'Apa yang dimaksud dengan gratifikasi? \n \n',
+              text: 'Konsekuensi Hukum dari yang Tidak Melaporkan Gratifikasi \n \n',
               style: TextStyle(fontSize: 30, color: Colors.red, fontWeight: FontWeight.bold),
               children: [
                 TextSpan(
