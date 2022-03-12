@@ -99,7 +99,7 @@ class Quiz2State extends State<Quiz2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PROVE ITT !!'),
+        title: Text('PROVE IT !!'),
       ),
       body: questionIndex < questions.length
           ? Quiz(questions, _answerQuestion, questionIndex)

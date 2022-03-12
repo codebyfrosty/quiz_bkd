@@ -3,80 +3,79 @@
 import 'package:flutter/material.dart';
 
 import './quiz.dart';
-import './result.dart';
 
 class Quiz3 extends StatefulWidget {
   // const Quiz1({ Key? key }) : super(key: key);
 
   @override
-  State<StatefulWidget> createState(){
+  State<StatefulWidget> createState() {
     return Quiz3State();
   }
 }
 
 class Quiz3State extends State<Quiz3> {
-  
   final questions = const [
- 
-
     {
       'questionText': 'Studi kasus 1',
       'answers': [
-        {'text': 'Pemberian setelah melaksanakan tugas pelayanan', 'score': 1},
-        {'text': 'Mendapat cinderamata dari kegiatan resmi dinas seperti rapat dan seminar', 'score': 0},
-        {'text': 'Adanya hubungan keluarga, sepanjang tidak memiliki kepentingan', 'score': 0},
-        {'text': 'Terkait musibah atau bencana paling banyak Rp.1.000.000,-', 'score': 0}
-
+        {'text': 'Jawaban bener', 'score': 1},
+        {'text': 'Jawaban salah', 'score': 0},
       ],
     },
     {
       'questionText': 'Studi kasus 2',
       'answers': [
-        {'text': 'Pasal 12B dan 12C Undang-Undang Nomor 31 Tahun 1999', 'score': 0},
-        {'text': 'Pasal 12b dan 12c Undang-Undang Nomor 20 Tahun 2001', 'score': 0},
-        {'text': 'Pasal 12b dan 12c Undang-Undang Nomor 31 Tahun 1999', 'score': 0},
-        {'text': 'Pasal 12B dan 12C Undang-Undang Nomor 20 Tahun 2001', 'score': 1}
+        {'text': 'Jawaban bener', 'score': 1},
+        {'text': 'Jawaban salah', 'score': 0},
       ],
     },
     {
       'questionText': 'Studi kasus 3',
       'answers': [
-        {'text': 'Unit Pemegang Gratifikasi', 'score': 0},
-        {'text': 'Unit Pengelola Gratifikasi', 'score': 0},
-        {'text': 'Unit Pengadaan Gratifikasi', 'score': 0},
-        {'text': 'Unit Pengendali Gratifikasi', 'score': 1}
+        {'text': 'Jawaban bener', 'score': 1},
+        {'text': 'Jawaban salah', 'score': 0},
       ],
     },
     {
       'questionText': 'Studi kasus 4',
       'answers': [
-        {'text': '7 hari kerja', 'score': 0},
-        {'text': '21 hari kerja', 'score': 0},
-        {'text': '30 hari kerja', 'score': 1},
-        {'text': '60 hari kerja', 'score': 0}
+        {'text': 'Jawaban bener', 'score': 1},
+        {'text': 'Jawaban salah', 'score': 0},
       ],
     },
     {
-      'questionText': 'Gratifikasi akan dianggap sebagai suap, apabila?',
+      'questionText': 'Studi kasus 5',
       'answers': [
-        {'text': 'Penerimaan dalam rangka kedinasan', 'score': 0},
-        {'text': 'Penerima adalah seorang Pegawai Negeri Sipil atau Penyelenggara Negara', 'score': 0},
-        {'text': 'Berhubungan dengan jabatan dan berlawanan dengan kewajiban atau tugas penerima', 'score': 1},
-        {'text': 'Penerimaan dilakukan dalam acara formal kedinasan', 'score': 0}
+        {'text': 'Jawaban bener', 'score': 1},
+        {'text': 'Jawaban salah', 'score': 0},
       ],
     },
+  ];
 
-
-
-
+  final kj = const [
+    'Jawaban studi kasus ',
+    'Jawaban studi kasus 1',
+    'Jawaban studi kasus 2',
+    'Jawaban studi kasus 3',
+    'Jawaban studi kasus 4',
+    'Jawaban studi kasus 5',
   ];
 
   var questionIndex = 0;
   var totalscore = 0;
+  bool showQuiz = true;
 
   void resetQuiz() {
     setState(() {
       questionIndex = 0;
+      totalscore = 0;
+      showQuiz = true;
+    });
+  }
+
+  void lanjut() {
+    setState(() {
+      showQuiz = true;
       totalscore = 0;
     });
   }
@@ -85,28 +84,70 @@ class Quiz3State extends State<Quiz3> {
     totalscore = totalscore + score;
     // totalscore += score;
 
-    if (questionIndex < questions.length) {
+    if (questionIndex < 5) {
       print('We have more questions!');
     }
 
     setState(() {
       questionIndex = questionIndex + 1;
+      showQuiz = false;
     });
 
     print(questionIndex);
   }
 
-  
+  Widget quizlogic() {
+    return showQuiz
+        ? Quiz(questions, _answerQuestion, questionIndex)
+        : Column(
+            children: [
+              totalscore == 0
+                  ? Center(
+                      child: Text('Jawaban Anda Salah'),
+                    )
+                  : Center(
+                      child: Text('Jawaban Anda Benar'),
+                    ),
+              Center(
+                child: Text(kj[questionIndex]),
+              ),
+              Center(
+                child: ElevatedButton(
+                  onPressed: lanjut,
+                  child: Text('Studi Kasus Berikutnya'),
+                ),
+              )
+            ],
+          );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Quiz Gratifikasi'),
-      ),
-      body: questionIndex < questions.length
-          ? Quiz(questions, _answerQuestion, questionIndex)
-          : Result(totalscore, resetQuiz),
-    );
+        appBar: AppBar(
+          title: Text('Studi Kasus'),
+        ),
+        body: questionIndex < 5
+            ? quizlogic()
+            : Column(
+                children: [
+                  totalscore == 0
+                      ? Center(
+                          child: Text('Jawaban Anda Salah'),
+                        )
+                      : Center(
+                          child: Text('Jawaban Anda Benar'),
+                        ),
+                  Center(
+                    child: Text(kj[questionIndex]),
+                  ),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: resetQuiz,
+                      child: Text('Coba Lagi'),
+                    ),
+                  )
+                ],
+              ));
   }
 }
-

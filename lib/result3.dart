@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 class Result3 extends StatelessWidget {
   // const Rlt({ Key? key }) : super(key: key);
 
-  Function reset;
+  final Function reset;
   final int resultScore;
+  final Function lanjut;
   // Function hideQ;
-  Result3(this.resultScore, this.reset);
+  Result3(this.resultScore, this.reset, this.lanjut);
 
   String get resultphrase {
     var resultText = 'Anda menjawab ' + resultScore.toString() + ' pertanyaan dengan benar';

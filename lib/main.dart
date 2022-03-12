@@ -26,6 +26,9 @@ class MyAppState extends State<MyApp> {
             appBar: AppBar(
               title: Text('Prove It!'),
             ),
-            body: Home()));
+            body: Home(),
+            // drawer: Drawer(),
+            
+            ));
   }
 }
