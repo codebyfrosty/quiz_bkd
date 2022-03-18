@@ -101,6 +101,7 @@ class Quiz1State extends State<Quiz1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(193, 52, 47, 1),
         title: Text('Quiz Gratifikasi'),
       ),
       body: questionIndex < questions.length

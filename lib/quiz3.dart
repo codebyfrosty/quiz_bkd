@@ -125,6 +125,7 @@ class Quiz3State extends State<Quiz3> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromRGBO(193, 52, 47, 1),
           title: Text('Studi Kasus'),
         ),
         body: questionIndex < 5

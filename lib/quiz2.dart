@@ -99,6 +99,7 @@ class Quiz2State extends State<Quiz2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(193, 52, 47, 1),
         title: Text('PROVE IT !!'),
       ),
       body: questionIndex < questions.length

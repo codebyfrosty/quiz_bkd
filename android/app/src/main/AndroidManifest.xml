@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_complete_guide">
+    package="com.codebyfrosty.prove_it">
    <application
         android:label="Prove It!"
         android:icon="@mipmap/ic_launcher">

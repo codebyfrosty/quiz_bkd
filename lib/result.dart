@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Result extends StatelessWidget {
   // const Rlt({ Key? key }) : super(key: key);
 
-  Function reset;
+  final Function reset;
   final int resultScore;
   // Function hideQ;
   Result(this.resultScore, this.reset);
