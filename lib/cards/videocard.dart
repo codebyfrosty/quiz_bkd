@@ -19,7 +19,7 @@ class video extends StatelessWidget {
           children: [
             Ink.image(
                 image: AssetImage(
-                  'assets/images/video.png',
+                  'assets/images/video2.png',
                 ),
                 height: 240,
                 width: 390,
@@ -35,6 +35,10 @@ class video extends StatelessWidget {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 78),
+              child: Icon(Icons.play_arrow_rounded, size: 100, color: Colors.white,),
+            )
           ],
         ),
       ),
