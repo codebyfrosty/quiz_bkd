@@ -26,14 +26,18 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        accentColor: _appbarBG
+      ),
       // debugShowCheckedModeBanner:false,
         home: Scaffold(
             appBar: AppBar(
               backgroundColor: _appbarBG,
+              elevation: 0,
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/images/logo.png', height: 35,),
+                  Image.asset('assets/images/logo.png', height: 38,),
                 ],
               ),
               

@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_complete_guide/moduls/kategori.dart';
-// import 'package:flutter_complete_guide/moduls/konsekuensi.dart';
-// import 'package:flutter_complete_guide/moduls/penerima.dart';
-// import 'package:flutter_complete_guide/moduls/bilamana.dart';
-// import 'package:flutter_complete_guide/moduls/bagaimana.dart';
-// import 'package:flutter_complete_guide/moduls/harus.dart';
-// import 'package:flutter_complete_guide/moduls/siapkan.dart';
-// import 'package:flutter_complete_guide/moduls/perlindungan.dart';
-// import 'package:flutter_complete_guide/moduls/dilaporkan.dart';
-// import 'package:flutter_complete_guide/moduls/kasus.dart';
 
-// import './moduls/pengertian.dart';
+import 'cards/modulcard.dart';
 
 class Modul extends StatelessWidget {
   // const Modul({ Key? key }) : super(key: key);
@@ -24,26 +14,7 @@ class Modul extends StatelessWidget {
           centerTitle: true),
       body: ListView(
         children: [
-          Card(
-            
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'If life were predictable it would cease to be life, and be without flavor.',
-                style: TextStyle(fontSize: 24),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                'Eleanor Roosevelt',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-        ),
-          )
+          
         ],
       ),
     );

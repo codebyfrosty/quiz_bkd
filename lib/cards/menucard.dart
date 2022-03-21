@@ -9,37 +9,34 @@ class menucard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => tujuan));
       },
       child: Card(
-        // clipBehavior: Clip.antiAlias,
+        clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(15),
         ),
         child: Column(
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(20),
-                topLeft: Radius.circular(20),
-              ),
-              child: Image.asset(
-                gambar,
-                height: 132,
-                width: 160,
-                fit: BoxFit.fitHeight,
-              ),
-            ),
-            FlatButton(
-              child: Text(judul),
-              onPressed: () {
+            InkWell(
+              onTap: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => tujuan));
               },
+              child: Ink.image(
+                image: AssetImage(gambar),
+                height: 160,
+                width: 175,
+                fit: BoxFit.fitHeight,
+              ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(judul),
+            )
           ],
         ),
       ),
