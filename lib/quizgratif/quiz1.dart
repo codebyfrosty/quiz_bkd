@@ -353,7 +353,8 @@ class Quiz1State extends State<Quiz1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: questionIndex < questions.length
+      ? AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
@@ -379,11 +380,20 @@ class Quiz1State extends State<Quiz1> {
                 ],
               ),
             ),
+      )
+      :AppBar(
+        title: Text('Hasil Quiz', style: TextStyle(fontWeight: FontWeight.bold),),
+        backgroundColor: Color.fromRGBO(224, 101, 101, 1),
+        centerTitle: true,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.close, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
       ),
       body: questionIndex < questions.length
           ? Quiz(questions, _answerQuestion, questionIndex)
-          : Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Result(totalscore, resetQuiz),))
+          : Result(totalscore, resetQuiz)
     );
   }
 }
