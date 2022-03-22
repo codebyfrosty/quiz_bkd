@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './kjcard.dart';
 
 class Result extends StatelessWidget {
   // const Rlt({ Key? key }) : super(key: key);
@@ -7,6 +8,54 @@ class Result extends StatelessWidget {
   final int resultScore;
   // Function hideQ;
   Result(this.resultScore, this.reset);
+
+  var datakj = [
+    {
+      'soal': 'Bagaimana Anda Mengartikan Gratifikasi?',
+      'jwb': 'Pemberian Untuk Melancarkan Tujuan'
+    },
+    {
+      'soal': 'Jenis Gratifikasi dibawah ini tidak wajib dilaporkan, kecuali?',
+      'jwb': 'Pemberian setelah melaksanakan tugas pelayanan'
+    },
+    {
+      'soal': 'Salah satu manfaat pengendalian gratifikasi, kecuali?',
+      'jwb': 'Mendapatkan penghargaan individu'
+    },
+    {
+      'soal': 'Aturan hukum gratifikasi, diatur dalam?',
+      'jwb': 'Pasal 12B dan 12C Undang-Undang Nomor 20 Tahun 2001'
+    },
+    {
+      'soal': 'Apa yang dimaksud dengan UPG dalam tubuh KPK?',
+      'jwb': 'Unit Pengendali Gratifikasi'
+    },
+    {
+      'soal':
+          'Batas waktu penyerahan barang atau uang gratifiaksi ke KPK jika telah ditetapkan milik Negara adalah?',
+      'jwb': '30 hari kerja'
+    },
+    {
+      'soal': 'Gratifikasi akan dianggap sebagai suap, apabila?',
+      'jwb':
+          'Berhubungan dengan jabatan dan berlawanan dengan kewajiban atau tugas penerima'
+    },
+    {
+      'soal': 'Berbeda dengan suap dan pemerasan, gratifikasi bersifat..',
+      'jwb': 'Inventif (Tanam Budi)'
+    },
+    {
+      'soal':
+          'Peran aktif pegawai dalam keberhasilan penerapan pengendalian gratifikasi antara lain adalah..',
+      'jwb': 'Menolak gratifikasi yang bersifat suap'
+    },
+    {
+      'soal':
+          'Hukuman bagi pelaku dan penerima gratifikasi (apabila tidak melapor) adalah…',
+      'jwb':
+          'Pidana penjara seumur hidup atau penjara paling singkat 4 tahun dan paling lama 20 tahun dan denda paling sedikit 200 juta dan paling banyak 1 miliar.'
+    },
+  ];
 
   int get jmlsalah {
     var salah = 10 - resultScore;
@@ -23,6 +72,17 @@ class Result extends StatelessWidget {
 
     return jawabansalah;
   }
+
+  // String get medali {
+  //   var gambar=
+  //   resultScore < 5
+  //                 ? 'assets/images/Medali Perunggu.png'
+  //                 : resultScore < 9
+  //                 ? 'assets/images/Medali Perak.png'
+  //                 : resultScore < 11
+  //                 ? 'assets/images/Medali Emas.png'
+
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +106,13 @@ class Result extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/images/piagam.png',
+                  resultScore < 5
+                      ? 'assets/images/Medali Perunggu.png'
+                      : resultScore < 9
+                          ? 'assets/images/Medali Perak.png'
+                          : resultScore < 11
+                              ? 'assets/images/Medali Emas.png'
+                              : null,
                   height: 150,
                 ),
                 Text(
@@ -134,13 +200,16 @@ class Result extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  color: Colors.grey,
+                  // color: Colors.grey,
                   height: MediaQuery.of(context).size.height / 3,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 30, top: 0,),
+                        padding: const EdgeInsets.only(
+                          left: 30,
+                          top: 0,
+                        ),
                         child: Text(
                           'Kunci Jawaban :',
                           style: TextStyle(
@@ -148,10 +217,19 @@ class Result extends StatelessWidget {
                         ),
                       ),
                       Flexible(
-                        child: ListView(
-                          children: [
-                            
-                          ],
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 15, right: 15),
+                          child: ListView(
+                            children: [
+                              ...(datakj as List<Map<String, String>>)
+                                  .map((konten) {
+                                return kjcard(
+                                  konten['soal'],
+                                  konten['jwb'],
+                                );
+                              }).toList()
+                            ],
+                          ),
                         ),
                       )
                     ],
@@ -162,9 +240,20 @@ class Result extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: ElevatedButton(
-              onPressed: reset,
-              child: Text('Coba Lagi'),
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: ElevatedButton(
+                  onPressed: reset,
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromRGBO(224, 101, 101, 1),
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 30, right: 30, top: 7, bottom: 7),
+                    child: Text('Coba Lagi?', style:TextStyle(fontSize: 20) ),
+                  )),
             ),
           )
         ],
