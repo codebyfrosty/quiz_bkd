@@ -19,30 +19,53 @@ class Quiz1State extends State<Quiz1> {
     {
       'questionText': 'Bagaimana Anda Mengartikan Gratifikasi?',
       'answers': [
-        {'text': 'Penyemangat Kerja', 'score': 0},
-        {'text': 'Uang Persyaratan', 'score': 0},
-        {'text': 'Ungkapan Terima Kasih', 'score': 0},
-        {'text': 'Pemberian Untuk Melancarkan Tujuan', 'score': 1}
+        {
+          'text': 'Penyemangat Kerja',
+          'score': 0,
+          'color': Color.fromRGBO(77, 150, 255, 1)
+        },
+        {
+          'text': 'Uang Persyaratan',
+          'score': 0,
+          'color': Color.fromRGBO(107, 203, 119, 1)
+        },
+        {
+          'text': 'Ungkapan Terima Kasih',
+          'score': 0,
+          'color': Color.fromRGBO(107, 203, 119, 1)
+        },
+        {
+          'text': 'Pemberian Untuk Melancarkan Tujuan',
+          'score': 1,
+          'color': Color.fromRGBO(107, 203, 119, 1)
+        }
       ],
     },
     {
       'questionText':
           'Jenis Gratifikasi dibawah ini tidak wajib dilaporkan, kecuali?',
       'answers': [
-        {'text': 'Pemberian setelah melaksanakan tugas pelayanan', 'score': 1},
+        {
+          'text': 'Pemberian setelah melaksanakan tugas pelayanan',
+          'score': 1,
+          'color': Color.fromRGBO(77, 150, 255, 1)
+        },
         {
           'text':
               'Mendapat cinderamata dari kegiatan resmi dinas seperti rapat dan seminar',
-          'score': 0
+          'score': 0,
+          'color': Color.fromRGBO(77, 150, 255, 1)
         },
         {
           'text':
               'Adanya hubungan keluarga, sepanjang tidak memiliki kepentingan',
-          'score': 0
+          'score': 0,
+          'color': Color.fromRGBO(77, 150, 255, 1)
         },
         {
           'text': 'Terkait musibah atau bencana paling banyak Rp.1.000.000,-',
-          'score': 0
+          'score': 0,
+          'color': Color.fromRGBO(77, 150, 255, 1)
         }
       ],
     },

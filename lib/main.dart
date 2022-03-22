@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 // import 'package:hexcolor/hexcolor.dart';
 
 import './home.dart';
@@ -27,7 +28,8 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        accentColor: _appbarBG
+        accentColor: _appbarBG,
+        fontFamily: 'Nunito'
       ),
       // debugShowCheckedModeBanner:false,
         home: Scaffold(

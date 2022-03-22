@@ -20,24 +20,27 @@ class modulcard extends StatelessWidget {
            enterPage: halmodul(isimodul, judul, cardtext), exitPage: Modul())
         );
       },
-      child: Card(
-        elevation: 1,
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
-        ),
-        child: Padding(
-          padding:
-              const EdgeInsets.only(top: 20, bottom: 20, left: 10, right: 15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                cardtext,
-                style: TextStyle(fontSize: 18),
-              ),
-              Icon(Icons.arrow_forward)
-            ],
+      child: Padding(
+        padding: const EdgeInsets.only(right: 5, left: 5),
+        child: Card(
+          elevation: 1,
+          color: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Padding(
+            padding:
+                const EdgeInsets.only(top: 20, bottom: 20, left: 10, right: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  cardtext,
+                  style: TextStyle(fontSize: 18),
+                ),
+                Icon(Icons.arrow_forward)
+              ],
+            ),
           ),
         ),
       ),

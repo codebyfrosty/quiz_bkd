@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 //tes
 import 'cards/menucard.dart';
 import './modul.dart';
-import './quiz1.dart';
+import './quizgratif/quiz1.dart';
 import './quiz2.dart';
 import './quiz3.dart';
 import 'cards/videocard.dart';
@@ -28,7 +28,7 @@ class Home extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
-                        fontWeight: FontWeight.w400
+                        fontWeight: FontWeight.w600
                         ),
                         textAlign: TextAlign.left,
                   ),
@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
                 children: [
                   Text(
                     'Pilih Aktivitas',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,

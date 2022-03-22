@@ -12,7 +12,7 @@ class halmodul extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       child: new Scaffold(
-        appBar: new AppBar(title: Text(_appbar),
+        appBar: new AppBar(title: Text(_appbar, style:TextStyle(fontWeight: FontWeight.bold)),
         backgroundColor: Color.fromRGBO(193, 52, 47, 1),
         centerTitle: true,
         ),
@@ -22,11 +22,11 @@ class halmodul extends StatelessWidget {
             child: new RichText(
               text: TextSpan(
                 text: _judul,
-                style: TextStyle(fontSize: 30, color: Colors.red, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 30, color: Colors.red, fontWeight: FontWeight.w900, fontFamily: 'Nunito'),
                 children: [
                   TextSpan(
                     text: _teks,
-                    style: TextStyle(fontSize: 22, color: Colors.black, fontWeight: FontWeight.normal)
+                    style: TextStyle(fontSize: 22, color: Colors.black, fontWeight: FontWeight.normal, fontFamily: 'Nunito')
                   )
                 ]
               ),

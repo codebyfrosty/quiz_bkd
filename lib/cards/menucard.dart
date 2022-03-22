@@ -34,8 +34,8 @@ class menucard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text(judul),
+              padding: const EdgeInsets.all(8.0),
+              child: Text(judul, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),),
             )
           ],
         ),

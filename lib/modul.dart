@@ -25,7 +25,7 @@ class Modul extends StatelessWidget {
           'Penerimaan gratifikasi oleh pegawai negeri atau penyelenggara negara wajib dilaporkan kepada Komisi Pemberantasan Korupsi selambat-lambatnya 30 (tiga puluh) hari kerja terhitung sejak tanggal gratifikasi tersebut diterima. Hal ini sesuai dengan ketentuan yang tercantum dalam Pasal 12C ayat (2) Undang- Undang Nomor 31 Tahun 1999 juncto Undang-Undang Nomor 20 Tahun 2001.'
     },
     {
-      'cardtext': 'Konsekuensi Tidak Melaporkan',
+      'cardtext': 'Konsekuensi Jika Tidak Melaporkan',
       'judul': 'Konsekuensi Hukum dari yang Tidak Melaporkan Gratifikasi \n \n',
       'isimodul':
           'Sanksi pidana yang ditetapkan pada tindak pidana ini cukup berat, yaitu pidana penjara minimum empat tahun, dan maksimum 20 tahun atau pidana penjara seumur hidup, dan pidana denda paling sedikit Rp. 200.000.000,00 (dua ratus juta rupiah), maksimum Rp1.000.000.000,00 (satu miliyar rupiah). Dari rumusan ini jelas sekali bahwa penerimaan gratifikasi merupakan hal yang sangat serius sebagai salah satu bentuk tindak pidana korupsi, dengan sanksi pidana yang persis sama dengan tindak pidana suap lainnya dalam Undang-Undang Pemberantasan Tindak Pidana Korupsi'
@@ -82,26 +82,23 @@ class Modul extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-          // elevation: 0,
+          elevation: 0,
           backgroundColor: Color.fromRGBO(193, 52, 47, 1),
           title: Text(
             'Modul',
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: true),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 5, right: 5, left: 5),
-        child: ListView(
-          children: [
-            ...(kontenmodul as List<Map<String, String>>).map((konten) {
-              return modulcard(
-                cardtext: konten['cardtext'],
-                isimodul: konten['isimodul'],
-                judul: konten['judul'],
-              );
-            }).toList()
-          ],
-        ),
+      body: ListView(
+        children: [
+          ...(kontenmodul as List<Map<String, String>>).map((konten) {
+            return modulcard(
+              cardtext: konten['cardtext'],
+              isimodul: konten['isimodul'],
+              judul: konten['judul'],
+            );
+          }).toList()
+        ],
       ),
     );
   }
