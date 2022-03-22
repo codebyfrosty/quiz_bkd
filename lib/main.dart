@@ -31,7 +31,7 @@ class MyAppState extends State<MyApp> {
         accentColor: _appbarBG,
         fontFamily: 'Nunito'
       ),
-      // debugShowCheckedModeBanner:false,
+      debugShowCheckedModeBanner:false,
         home: Scaffold(
             appBar: AppBar(
               backgroundColor: _appbarBG,

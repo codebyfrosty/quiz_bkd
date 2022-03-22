@@ -9,7 +9,8 @@ class Result extends StatelessWidget {
   Result(this.resultScore, this.reset);
 
   String get resultphrase {
-    var resultText = 'Anda menjawab ' + resultScore.toString() + ' pertanyaan dengan benar';
+    var resultText =
+        'Anda menjawab ' + resultScore.toString() + ' pertanyaan dengan benar';
     // if (resultScore >= 9) {
     //   resultText = 'Anda suka ayam goreng, kopi kapal api, dan jalan2';
     // } else {
@@ -20,22 +21,11 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Column(
-      children: [
-        Text(
-          resultphrase,
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-        ),
-        FlatButton(onPressed: reset, child: Text('Coba Lagi')),
-        // RaisedButton(
-        //   onPressed: () {
-        //     print('object');
-        //     // hideQ();
-        //   },
-        //   child: Text('Balik ke Menu Awal'),
-        // )
-      ],
-    ));
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Hasil Quiz'),
+        backgroundColor: Color.fromRGBO(224, 101, 101, 1),
+      ),
+    );
   }
 }

@@ -87,6 +87,12 @@ flutter:
         - asset: assets/fonts/Nunito/Nunito-Black.ttf
           weight: 900
     
+    - family: Fredoka One
+      fonts:
+        - asset: assets/fonts/Fredoka_One/FredokaOne-Regular.ttf
+          
+        
+    
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

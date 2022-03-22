@@ -28,8 +28,10 @@ class menucard extends StatelessWidget {
               },
               child: Ink.image(
                 image: AssetImage(gambar),
-                height: 160,
-                width: 175,
+                // height: 160,
+                // width: 175,
+                height: 140,
+                width: 155,
                 fit: BoxFit.fitHeight,
               ),
             ),
