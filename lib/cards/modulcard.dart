@@ -34,9 +34,13 @@ class modulcard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  cardtext,
-                  style: TextStyle(fontSize: 18),
+                Container(
+                  // color: Colors.grey,
+                  width: MediaQuery.of(context).size.width/1.3,
+                  child: Text(
+                    cardtext,
+                    style: TextStyle(fontSize: 18),
+                  ),
                 ),
                 Icon(Icons.arrow_forward)
               ],

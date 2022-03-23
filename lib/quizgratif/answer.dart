@@ -1,4 +1,4 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class Answer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 10, left: 10),
       child: Container(
-        height: 120,
+        height: MediaQuery.of(context).size.height/6.3,
         child: Card(
           color: warna,
           clipBehavior: Clip.antiAlias,

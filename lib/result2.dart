@@ -10,13 +10,13 @@ class Result2 extends StatelessWidget {
   String get resultphrase {
     var resultText = 'You did all the questions!';
     if (resultScore == 0) {
-      resultText = 'Pemberian yang Anda terima bebas dari unsur gratifikasi';
+      resultText = 'Pemberian yang Anda terima bebas dari unsur gratifikasi terlarang';
     } else if(resultScore <= 2) {
-      resultText = 'Pemberian yang Anda terima sedikit terindakasi sebagai gratifikasi';
+      resultText = 'Pemberian yang Anda terima sedikit terindakasi sebagai gratifikasi terlarang';
     } else if(resultScore <= 4) {
       resultText = 'Terdapat banyak indikasi gratifikasi pada pemberian yang Anda terima. Sebaiknya tidak diterima.';
     } else if(resultScore <= 7) {
-      resultText = 'Pemberian yang Anda terima hampir dapat dipastikan adalah gratifikasi!!';
+      resultText = 'Pemberian yang Anda terima hampir dapat dipastikan adalah gratifikasi terlarang!!';
     }
     return resultText;
   }

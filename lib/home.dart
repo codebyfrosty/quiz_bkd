@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/prove_it/quiz2.dart';
 //tes
 import 'cards/menucard.dart';
 import './modul.dart';
 import './quizgratif/quiz1.dart';
-import './quiz2.dart';
-import './quiz3.dart';
+
+import './studikasus/quiz3.dart';
 import 'cards/videocard.dart';
+
+
 
 class Home extends StatelessWidget {
   @override
@@ -20,24 +23,28 @@ class Home extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(right: 12, left: 12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Tentang Prove It',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600
-                        ),
-                        textAlign: TextAlign.left,
-                  ),
-                  video(),
-                ],
+              child: Container(
+                // color: Colors.green,
+                height: MediaQuery.of(context).size.height/2.8,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Tentang Prove It',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600
+                          ),
+                          textAlign: TextAlign.left,
+                    ),
+                    video(),
+                  ],
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 12, left: 12, top: 17),
+              padding: const EdgeInsets.only(right: 12, left: 12, top: 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -70,9 +77,10 @@ class Home extends StatelessWidget {
                             gambar: 'assets/images/nolak_gratif.jpg',
                             judul: 'Prove It!',
                             tujuan: Quiz2(),
+                           
                           ),
                           menucard(
-                            gambar: 'assets/images/studikasus.jpg',
+                            gambar: 'assets/images/studikasus.jpeg',
                             judul: 'Studi Kasus',
                             tujuan: Quiz3(),
                           ),

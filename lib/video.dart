@@ -12,8 +12,7 @@ class _MyVideoPlayerState extends State<MyVideoPlayer> {
   VideoPlayerController controller;
 
   final String _teks =
-      'Isi Modul Prove It \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget nulla ligula. Integer porttitor nulla eget erat placerat, et iaculis lacus egestas. Nunc luctus odio vitae massa bibendum, vel luctus massa ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec pulvinar tristique suscipit. Donec dictum risus mauris, vel sagittis quam tincidunt et. Phasellus sed ante eget elit aliquet iaculis eget non mauris. Morbi diam ligula, eleifend et urna at, facilisis accumsan lectus.';
-
+      'Tahukah Anda? Sebenarnya terdapat sebuah metode sederhana yang diperkenalkan oleh Komisi Pemberantasan Korupsi untuk membuktikan sebuah pemberian termasuk suap ilegal atau pemberian legal. \n\nMetode tersebut bernama Prove IT!. Metode Prove IT! Terdiri dari 7 pertanyaan yang diawali oleh huruf-huruf dalam Prove IT! Itu sendiri yang kita layangkan pada diri kita sendiri saat mempertimbangkan apakah sebuah pemberian boleh kita terima atau tidak. Beberapa hal yang ditanyakan pada metode Prove IT! Adalah sebagai berikut. \n\n1.Purpose\n“Apakah tujuan dari pemberian gratifikasi tersebut?” \n\n2.Rules\n“Bagaimanakah aturan perundangan mengatur tentang gratifikasi?” \n\n3.Openess \n“Bagaimana substansi keterbukaan pemberian tersebut? Apakah hadiah diberikan secara sembunyi-sembunyi atau di depan umum?” \n\n4.Value \n“Berapa nilai dari gratifikasi tersebut?” \n\n5.Ethics\n “Apakah nilai moral probadi Anda memperbolehkan penerimaan hadiah tersebut?” \n\n6.Identity\n “Apakah pemberi memiliki hubungan jabatan, calon rekanan, atau rekanan instansi?”\n\n7.Timing\n “Apakah pemberian gratifikasi berhubungan dengan pengambilan keputusan, pelayanan atau perizinan?” \n\nCukup simpel, kan? Anda kini tidak perlu khawatir lagi ketika mendapat pemberian misterius. Kalau pemberiannya memenuhi semua kriteria di atas, mendingan lapor deh… daripada make rompi oranye ya kan hehe…';
   // String dataSource =
   //     "https://shivanesboutique.com/pub/media/S_MAM_VIDEO_10042021.mp4";
   String asset = "assets/videos/videomascakra.mp4";
@@ -78,7 +77,7 @@ class _MyVideoPlayerState extends State<MyVideoPlayer> {
                 child: new RichText(
                   text: TextSpan(
                       text:
-                          'Judul Modul Prove It \n \n',
+                          'Prove It - Cara Pembuktian Gratifikasi \n \n',
                       style: TextStyle(
                           fontSize: 30,
                           color: Colors.red,

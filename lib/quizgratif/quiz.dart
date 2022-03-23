@@ -16,8 +16,13 @@ class Quiz extends StatelessWidget {
     return ListView(
       children: [
         Container(
-          height: 150,
-          child: Question(questions[questionIndex]['questionText'] as String),
+          height: MediaQuery.of(context).size.height/5,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Question(questions[questionIndex]['questionText'] as String),
+            ],
+          ),
         ),
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {
