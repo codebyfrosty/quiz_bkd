@@ -5,7 +5,7 @@ class video extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height/3.2,
+      // height: MediaQuery.of(context).size.height/3.2,
       child: Card(
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
@@ -25,7 +25,7 @@ class video extends StatelessWidget {
                   ),
                   height: 240,
                   width: 390,
-                  fit: BoxFit.cover),
+                  fit: BoxFit.fitHeight),
               Padding(
                 padding: const EdgeInsets.only(left: 8),
                 child: Text(

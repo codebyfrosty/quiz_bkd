@@ -171,26 +171,31 @@ class Quiz3State extends State<Quiz3> {
                         Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Container(
-                              height: MediaQuery.of(context).size.height / 3.5,
+                              constraints: BoxConstraints(
+                                minHeight:
+                                    MediaQuery.of(context).size.height / 3.5,
+                              ),
+                              // height: MediaQuery.of(context).size.height / 3.5,
                               clipBehavior: Clip.antiAlias,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(15),
                                   ),
                                   color: Color.fromRGBO(0, 0, 0, 0.4)),
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, right: 10),
+                                    child: Text(
                                       kj[questionIndex],
                                       style: TextStyle(
                                           fontSize: 20, color: Colors.white),
                                       textAlign: TextAlign.center,
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               )),
                         ),
                         totalscore == 1
@@ -322,8 +327,11 @@ class Quiz3State extends State<Quiz3> {
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Container(
-                                  height:
-                                      MediaQuery.of(context).size.height / 3.5,
+                                  constraints: BoxConstraints(
+                                    minHeight:
+                                        MediaQuery.of(context).size.height /
+                                            3.5,
+                                  ),
                                   clipBehavior: Clip.antiAlias,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
@@ -350,7 +358,10 @@ class Quiz3State extends State<Quiz3> {
                             totalscore == 1
                                 ? ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      fixedSize: Size(MediaQuery.of(context).size.width/2, 25),
+                                        fixedSize: Size(
+                                            MediaQuery.of(context).size.width /
+                                                2,
+                                            25),
                                         primary: Colors.white),
                                     onPressed: resetQuiz,
                                     child: Text(
@@ -364,7 +375,10 @@ class Quiz3State extends State<Quiz3> {
                                   )
                                 : ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      fixedSize: Size(MediaQuery.of(context).size.width/2, 25),
+                                        fixedSize: Size(
+                                            MediaQuery.of(context).size.width /
+                                                2,
+                                            25),
                                         primary: Colors.white),
                                     onPressed: resetQuiz,
                                     child: Text(
@@ -379,7 +393,10 @@ class Quiz3State extends State<Quiz3> {
                             totalscore == 1
                                 ? ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      fixedSize: Size(MediaQuery.of(context).size.width/2, 25),
+                                        fixedSize: Size(
+                                            MediaQuery.of(context).size.width /
+                                                2,
+                                            25),
                                         primary: Colors.white),
                                     onPressed: () =>
                                         Navigator.of(context).pop(),
@@ -394,7 +411,10 @@ class Quiz3State extends State<Quiz3> {
                                   )
                                 : ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      fixedSize: Size(MediaQuery.of(context).size.width/2, 25),
+                                        fixedSize: Size(
+                                            MediaQuery.of(context).size.width /
+                                                2,
+                                            25),
                                         primary: Colors.white),
                                     onPressed: () =>
                                         Navigator.of(context).pop(),

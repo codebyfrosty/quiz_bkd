@@ -5,7 +5,7 @@ import 'package:flutter_complete_guide/prove_it/quiz2.dart';
 import 'cards/menucard.dart';
 import './modul.dart';
 import './quizgratif/quiz1.dart';
-
+import './cards/proveitcard.dart';
 import './studikasus/quiz3.dart';
 import 'cards/videocard.dart';
 
@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.only(right: 12, left: 12),
               child: Container(
                 // color: Colors.green,
-                height: MediaQuery.of(context).size.height/2.8,
+                // height: MediaQuery.of(context).size.height/2.8,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -73,7 +73,7 @@ class Home extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          menucard(
+                          proveit(
                             gambar: 'assets/images/nolak_gratif.jpg',
                             judul: 'Prove It!',
                             tujuan: Quiz2(),

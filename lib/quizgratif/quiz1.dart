@@ -99,7 +99,7 @@ class Quiz1State extends State<Quiz1> {
               'Mengangkat kredibilitas dan nilai lembaga yang dipersepsikan sebagai lembaga yang bersih dan profesional',
           'score': 0,
           'color': Color.fromRGBO(255, 189, 61, 1),
-          'size': 20
+          'size': 18
         },
         {
           'text': 'Mendapatkan penghargaan individu',
@@ -212,14 +212,14 @@ class Quiz1State extends State<Quiz1> {
               'Penerima adalah seorang Pegawai Negeri Sipil atau Penyelenggara Negara',
           'score': 0,
           'color': Color.fromRGBO(107, 203, 119, 1),
-          'size': 20
+          'size': 19
         },
         {
           'text':
               'Berhubungan dengan jabatan dan berlawanan dengan kewajiban atau tugas penerima',
           'score': 1,
           'color': Color.fromRGBO(255, 189, 61, 1),
-          'size': 20
+          'size': 19
         },
         {
           'text': 'Penerimaan dilakukan dalam acara formal kedinasan',
